@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url('./yellow-bg.png');
 }
 
 .wrapper {
@@ -17,14 +18,16 @@
   padding: 40px 60px;
   margin: 30px 20px;
   border-radius: 40px;
-  background-color: #F6D122;
   position: relative;
+  color: white;
+  background: url('./background.png');
+  z-index: 1;
 }
 
 .quote:before {
   height: 70px;
   width: 130px;
-  background-color: #F6D122;
+  background: url('./background.png');
   content: '';
   position: absolute;
   bottom: -15px;
