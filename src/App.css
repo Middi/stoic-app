@@ -1,0 +1,45 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote {
+  padding: 40px 60px;
+  margin: 30px 20px;
+  border-radius: 40px;
+  background-color: #F6D122;
+  position: relative;
+}
+
+.quote:before {
+  height: 70px;
+  width: 130px;
+  background-color: #F6D122;
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 22px;
+  transform: rotate(-30deg) skewX(-50deg);
+  z-index: -1;
+}
+
+button {
+  background: url('./button.png');
+  background-size: 100px;
+  width: 100px;
+  height: 92px;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+}
