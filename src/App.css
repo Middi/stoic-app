@@ -8,20 +8,31 @@
   margin: 0 auto;
   max-width: 540px;
   height: 100vh;
-  padding: 20px;
+  padding: 10px;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-.quote {
+.bubble {
   padding: 40px 60px;
-  margin: 110px 10px 0 0;
+  margin: 170px 10px 0 0;
   border-radius: 40px;
-  color: white;
   position: absolute;
   background: url('./background.png');
   z-index: 1;
+}
+
+.quote, h3 {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 100;
 }
 
 .quote:before {

@@ -3,12 +3,11 @@ import "./App.css";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import uuid from 'uuid';
 
-const stoicapi = require("stoic-api");
+const quotes = require('./quotes.json');
 
 class App extends Component {
   state = {
-		quote: "",
-		appearQuote: true
+		quote: {quote: 'Loading'}
   };
 
   componentDidMount() {
@@ -16,26 +15,30 @@ class App extends Component {
   }
 
   getQuote = () => {
-    const quote = stoicapi.random();
+		const random = quotes[Math.floor(Math.random()*quotes.length)];
+    const quote = random;
     this.setState({ quote });
   };
 
   render() {
     return (
       <div className="App">
-					<TransitionGroup className="wrapper">
-						<CSSTransition
-							key={uuid()}
-							in={this.state.appearQuote}
-							appear={true}
-							timeout={1000}
-							classNames="fade"
-						>
-							<h1 className="quote">{this.state.quote}</h1>
-						</CSSTransition>
+				<div className="wrapper">
+						<TransitionGroup component={null}>
+							<CSSTransition
+								key={uuid()}
+								timeout={1000}
+								classNames="fade"
+							>
+								<div className="bubble">
+									<h1 className="quote">{this.state.quote.quote}</h1>
+									<h3>- {this.state.quote.author}</h3>
+								</div>
+							</CSSTransition>
+						</TransitionGroup>
 						<button onClick={() => this.getQuote()} />
-					</TransitionGroup>
-      </div>
+				</div>
+			</div>
     );
   }
 }
