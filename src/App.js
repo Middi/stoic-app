@@ -7,7 +7,7 @@ const quotes = require('./quotes.json');
 
 class App extends Component {
   state = {
-		quote: {quote: 'Loading'}
+		quote: {}
   };
 
   componentDidMount() {
@@ -24,18 +24,21 @@ class App extends Component {
     return (
       <div className="App">
 				<div className="wrapper">
+					{this.state.quote.quote &&
 						<TransitionGroup component={null}>
 							<CSSTransition
 								key={uuid()}
-								timeout={1000}
+								timeout={1400}
 								classNames="fade"
 							>
 								<div className="bubble">
 									<h1 className="quote">{this.state.quote.quote}</h1>
-									<h3>- {this.state.quote.author}</h3>
+									{this.state.quote.author ? <h3>- {this.state.quote.author}</h3> : ''}
 								</div>
 							</CSSTransition>
 						</TransitionGroup>
+					}
+						
 						<button onClick={() => this.getQuote()} />
 				</div>
 			</div>
