@@ -14,4 +14,7 @@ Tech:
 - Node
 - React Transition Group (animations)
 
+
+[Extended Write-up](https://www.richardmiddleton.me/projects/stoic-quote-generator/)
+
 [View the App](http://stoic.richardmiddleton.me)
