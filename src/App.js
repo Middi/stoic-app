@@ -6,23 +6,22 @@ import uuid from 'uuid';
 const quotes = require('./quotes.json');
 
 class App extends Component {
-  state = {
+	state = {
 		quote: {}
-  };
+	};
 
-  componentDidMount() {
-    this.getQuote();
-  }
+	componentDidMount() {
+		this.getQuote();
+	}
 
-  getQuote = () => {
-		const random = quotes[Math.floor(Math.random()*quotes.length)];
-    const quote = random;
-    this.setState({ quote });
-  };
+	getQuote = () => {
+		const quote = quotes[Math.floor(Math.random() * quotes.length)];
+		this.setState({ quote });
+	};
 
-  render() {
-    return (
-      <div className="App">
+	render() {
+		return (
+			<div className="App">
 				<div className="wrapper">
 					{this.state.quote.quote &&
 						<TransitionGroup component={null}>
@@ -38,12 +37,12 @@ class App extends Component {
 							</CSSTransition>
 						</TransitionGroup>
 					}
-						
-						<button onClick={() => this.getQuote()} />
+
+					<button onClick={() => this.getQuote()} />
 				</div>
 			</div>
-    );
-  }
+		);
+	}
 }
 
 export default App;
